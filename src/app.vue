@@ -1,11 +1,12 @@
 <template>
-  <div class="btn" @click="show()">
+  <div class="btn" @click="show">
     {{msg}}
     <!-- <img src="./assets/small.jpg" /> -->
   </div>
 </template>
 
 <script>
+ import { mapActions } from 'vuex';
 export default {
   name: "App",
   data() {
@@ -13,14 +14,17 @@ export default {
       msg: "hello vue"
     };
   },
-  mounted() {
-  
-  
+  computed: {
+     
   },
   methods:{
+    ...mapActions('person',['login']),
+
     show(){
-      
-     alert(this.$store.state.count)   //this.$store.commit('increment');
+     
+  this.login({ userId: "", token: "", param: { phone: 19922222222, password: 1 } }).then((res)=>{
+    debugger
+  })
       
     }
   }

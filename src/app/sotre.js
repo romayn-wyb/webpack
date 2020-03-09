@@ -1,5 +1,19 @@
 import Http from '@/unit/Http';
-Http.post("/1001",{
-    dataType: "json",
-    data: JSON.stringify({ userId: "", token: "", param: { phone: 19922222222, password: 1 } }),
-})
+const APILOGIN = '/1001'
+
+const login = (data) => {
+  
+  return  Http.post(APILOGIN, {
+        dataType: "json",
+        data: JSON.stringify(data),
+    })
+}
+export default {
+    namespaced: true,
+    getters: {},
+    mutations: {
+    },
+    actions: {
+        login
+    },
+};

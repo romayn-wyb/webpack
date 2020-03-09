@@ -1,20 +1,21 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import axios from 'axios'
+import person from './app/sotre'
 Vue.use(Vuex);
 
 const store = new Vuex.Store({
   
   state: {
-    count: 0
+    count:1
   },
   mutations:{
-      increment(state){
-        state.count++;
-      }
+     
   },
   actions: {
-  
+
+  },
+  modules:{
+    person
   }
 })
 

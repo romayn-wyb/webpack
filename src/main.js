@@ -1,11 +1,9 @@
 import Vue from 'vue';
 import App from '@/app';
- import store from './store';
-//  import Http from  './unit/http';y
-
+import store from './store';
 new Vue({
     el: "#app",
-     store,
+    store,
     components: { App },
     template: '<App/>',
 })

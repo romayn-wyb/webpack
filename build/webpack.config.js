@@ -34,16 +34,15 @@ module.exports = {
 
             {
                 test: /\.js$/,
-                loader: 'babel-loader',
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ["babel-preset-env"]   // 转换规则
+                    }
+                },
+             
                 exclude: /node_modules/,
             },
-            // {
-            //     test: /\.json$/,
-            //     use: [
-            //         'json-loader'
-            //     ],
-
-            // },
              {
                 test: /\.css$/,
                 use: [

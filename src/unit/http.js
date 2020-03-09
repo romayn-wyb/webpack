@@ -38,4 +38,4 @@ class Http {
     }
 
 }
-return Http;
+export default Http;
