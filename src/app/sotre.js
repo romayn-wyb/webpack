@@ -1,6 +1,5 @@
 import Http from '@/unit/Http';
 const APILOGIN = '/1001'
-
 const login = (data) => {
   
   return  Http.post(APILOGIN, {
