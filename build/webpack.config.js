@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 const config = require('../config');
+
 // const utils = require("./utils");
 module.exports = {
     mode: "development",
@@ -34,13 +35,7 @@ module.exports = {
 
             {
                 test: /\.js$/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ["babel-preset-env"]   // 转换规则
-                    }
-                },
-             
+                loader: 'babel-loader',
                 exclude: /node_modules/,
             },
              {
@@ -101,15 +96,8 @@ module.exports = {
             }
         ]
     },
-    devServer: {
-        allowedHosts: [
-            '10.11.0.193',
-          ],
-          host: '10.11.0.193',
-        contentBase: path.join(__dirname, 'dist'),
-        compress: true,
-        port: 9000
-    },
+    
+    devServer: config.dev.server,
     plugins: [
         new VueLoaderPlugin(),
         new HtmlWebpackPlugin({

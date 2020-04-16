@@ -1,31 +1,25 @@
 <template>
-  <div class="btn" @click="show">
+  <div class="btn" @click="show()">
     {{msg}}
     <!-- <img src="./assets/small.jpg" /> -->
   </div>
 </template>
 
 <script>
- import { mapActions } from 'vuex';
 export default {
   name: "App",
   data() {
     return {
-      msg: "hello vue"
+      msg: "hello v444     ue"
     };
   },
-  computed: {
-     
+  mounted() {
+  
   },
   methods:{
-    ...mapActions('person',['login']),
-
     show(){
-     
-  this.login({ userId: "", token: "", param: { phone: 19922222222, password: 1 } }).then((res)=>{
-    debugger
-  })
       
+         this.$message.success('this is success message!')
     }
   }
 };
